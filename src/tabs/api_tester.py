@@ -1,2 +1,0 @@
-class APITester():
-    pass

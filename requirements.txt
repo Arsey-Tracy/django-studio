@@ -1,0 +1,12 @@
+# Minimal runtime dependencies for the Django Studio frontend client (PySide6 desktop UI)
+# Update these as the project evolves.
+PySide6>=6.5
+# Django>=4.2
+# requests>=2.31
+# httpx>=0.24
+python-dotenv>=1.0
+
+# Optional / helpful developer tools (uncomment in development environment as needed):
+# black
+# flake8
+# mypy

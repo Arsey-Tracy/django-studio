@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-studio"
+version = "0.1.0"
+description = "Django Studio - desktop IDE for Django (PySide6 + Django backend)"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [ { name = "Arsey-Tracy" } ]
+license = { file = "LICENSE" }
+dependencies = [
+  "PySide6>=6.5",
+  # "Django>=4.2",
+  $ "requests>=2.31",
+]
+
+# Optional build/packaging metadata can be added later (entry-points, extras, classifiers).
