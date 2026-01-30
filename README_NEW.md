@@ -72,8 +72,8 @@ python src/main.py
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/Django-Studio.git
-cd Django-Studio
+git clone https://github.com/Arsey-Tracy/django-studio.git
+cd django-studio
 
 # Create and activate virtual environment
 python3 -m venv .venv
@@ -96,13 +96,13 @@ python src/main.py
 
 ## 📋 Keyboard Shortcuts
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl+S` | Save & Auto-Format |
-| `Ctrl+F` | Find Text |
-| `Ctrl+H` | Find & Replace |
-| `Ctrl+O` | Open Project |
-| `Ctrl+/` | Toggle Comments |
+| Shortcut   | Action             |
+|:---------- |:------------------ |
+| `Ctrl+S`   | Save & Auto-Format |
+| `Ctrl+F`   | Find Text          |
+| `Ctrl+H`   | Find & Replace     |
+| `Ctrl+O`   | Open Project       |
+| `Ctrl+/`   | Toggle Comments    |
 
 ## 🎨 Django Theme
 
@@ -119,7 +119,7 @@ All UI elements, syntax highlighting, and status indicators use this cohesive Dj
 
 ## 📁 Project Structure
 
-```
+```bash
 Django-Studio/
 ├── src/
 │   ├── main.py                    # Application entry point
@@ -187,7 +187,7 @@ Django-Studio/
 
 ## 📦 Dependencies
 
-```
+```bash
 PySide6>=6.5.0
 ```
 

@@ -10,7 +10,7 @@ Django Studio has been fully enhanced with Django's official color scheme and co
 
 ### Color Palette
 
-```
+```makefile
 Django Green (Dark)    → #092E20  (Primary brand color)
 Django Green (Light)   → #44B78B  (Accent/highlight)
 Dark Background        → #0F1419  (Primary background)
@@ -22,7 +22,7 @@ Text Secondary         → #A8B5C4  (Secondary text)
 
 ### Status Colors
 
-```
+```txt
 Success (Added)        → #44B78B  (Green)
 Error (Deleted)        → #FF6B6B  (Red)
 Warning                → #FFD700  (Gold)
@@ -62,7 +62,7 @@ Info (Modified)        → #0C90FF  (Blue)
 
 ## 📁 File Structure
 
-```
+```bash
 Django-Studio/
 ├── src/
 │   ├── main.py
@@ -124,7 +124,7 @@ python src/main.py
 ## 🎯 Key Keyboard Shortcuts
 
 | Shortcut | Action |
-|----------|--------|
+| -------- | ------ |
 | Ctrl+S | Save & Format |
 | Ctrl+F | Find |
 | Ctrl+H | Find & Replace |
@@ -163,7 +163,7 @@ python src/main.py
 ## 📊 Component Theming Summary
 
 | Component | Primary Color | Background | Accent |
-|-----------|---------------|------------|--------|
+| ----------- | --------------- | ------------ | -------- |
 | Toolbar | Django Green | Secondary | Light Green |
 | Buttons | Django Green | - | Light Green |
 | Tabs | Editor | Secondary | Django Green |
@@ -216,6 +216,6 @@ The application is production-ready and can be deployed for use by Django develo
 
 ---
 
-**Ready to Code with Django Studio! 🚀**
+## Ready to Code with Django Studio! 🚀
 
-*Professional Django Development Made Simple*
+### Professional Django Development Made Simple
