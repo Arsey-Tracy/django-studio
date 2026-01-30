@@ -4,25 +4,56 @@ from PySide6.QtWidgets import (
     QWidget, QHBoxLayout, QMessageBox, QVBoxLayout, QLabel, QListWidget,
     QListWidgetItem, QPushButton, QFileDialog
 )
+from PySide6.QtGui import QFont
+from theme.django_theme import DjangoTheme
+
 class WelcomeWindow(QWidget):
     project_selected = Signal(str)      
     request_new_project = Signal()      
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Welcome to Django Studio")
-        self.resize(800, 600)
-        self.setStyleSheet("""
-            QWidget { background-color: #2D2D30; color: white; font-family: Segoe UI, sans-serif; }
-            QLabel { font-size: 24px; font-weight: bold; color: #CCCCCC; }
-            QListWidget { background-color: #1E1E1E; border: none; font-size: 14px; }
-            QListWidget::item { padding: 10px; border-bottom: 1px solid #333; }
-            QListWidget::item:hover { background-color: #2A2D2E; }
-            QPushButton { 
-                background-color: #333333; border: 1px solid #444; border-radius: 8px; 
-                padding: 15px; font-size: 16px; text-align: left;
-            }
-            QPushButton:hover { background-color: #3E3E42; border: 1px solid #007ACC; }
+        self.setWindowTitle("🚀 Django Studio - Welcome")
+        self.resize(1000, 700)
+        self.setStyleSheet(f"""
+            QWidget {{ 
+                background-color: {DjangoTheme.PRIMARY_BG}; 
+                color: {DjangoTheme.TEXT_PRIMARY}; 
+                font-family: Segoe UI, sans-serif; 
+            }}
+            QLabel {{ 
+                color: {DjangoTheme.TEXT_PRIMARY}; 
+            }}
+            QListWidget {{ 
+                background-color: {DjangoTheme.SECONDARY_BG}; 
+                border: 1px solid {DjangoTheme.BORDER_COLOR}; 
+                border-radius: 4px;
+                font-size: 12px; 
+            }}
+            QListWidget::item {{ 
+                padding: 12px; 
+                border-bottom: 1px solid {DjangoTheme.BORDER_COLOR}; 
+                color: {DjangoTheme.TEXT_PRIMARY};
+            }}
+            QListWidget::item:hover {{ 
+                background-color: {DjangoTheme.DJANGO_GREEN_ACCENT}; 
+            }}
+            QPushButton {{ 
+                background-color: {DjangoTheme.DJANGO_GREEN}; 
+                color: white;
+                border: none; 
+                border-radius: 6px; 
+                padding: 16px 20px; 
+                font-size: 14px;
+                font-weight: bold;
+                text-align: left;
+            }}
+            QPushButton:hover {{ 
+                background-color: {DjangoTheme.ACCENT_PRIMARY}; 
+            }}
+            QPushButton:pressed {{
+                background-color: {DjangoTheme.DJANGO_GREEN_LIGHT};
+            }}
         """)
 
         self.settings = QSettings("DjangoStudio", "RecentProjects")
@@ -32,11 +63,17 @@ class WelcomeWindow(QWidget):
 
     def setup_ui(self):
         main_layout = QHBoxLayout(self)
+        main_layout.setSpacing(30)
+        main_layout.setContentsMargins(30, 30, 30, 30)
         
         # Left Panel
         left_panel = QWidget()
         left_layout = QVBoxLayout(left_panel)
-        left_layout.addWidget(QLabel("Recent Projects"))
+        
+        recent_label = QLabel("Recent Projects")
+        recent_label.setFont(QFont("Segoe UI", 16, QFont.Bold))
+        recent_label.setStyleSheet(f"color: {DjangoTheme.TEXT_PRIMARY};")
+        left_layout.addWidget(recent_label)
         
         self.recent_list = QListWidget()
         self.recent_list.setFocusPolicy(Qt.NoFocus) 
@@ -49,7 +86,7 @@ class WelcomeWindow(QWidget):
             for path in self.recents:
                 item = QListWidgetItem()
                 name = os.path.basename(path)
-                item.setText(f"{name}\n{path}") 
+                item.setText(f"📁 {name}\n{path}") 
                 item.setData(Qt.UserRole, path) 
                 self.recent_list.addItem(item)
                 
@@ -61,15 +98,23 @@ class WelcomeWindow(QWidget):
         right_layout.setAlignment(Qt.AlignTop)
         right_layout.setSpacing(20)
 
-        logo = QLabel("Django Studio")
-        logo.setStyleSheet("font-size: 32px; color: #4EC9B0; margin-bottom: 20px;")
+        logo = QLabel("🚀 Django Studio")
+        logo.setFont(QFont("Segoe UI", 36, QFont.Bold))
+        logo.setStyleSheet(f"color: {DjangoTheme.ACCENT_PRIMARY}; margin-bottom: 10px;")
         right_layout.addWidget(logo)
+        
+        tagline = QLabel("Professional Django Development Environment")
+        tagline.setFont(QFont("Segoe UI", 12))
+        tagline.setStyleSheet(f"color: {DjangoTheme.TEXT_SECONDARY}; margin-bottom: 30px;")
+        right_layout.addWidget(tagline)
 
-        btn_new = QPushButton("✚  Create New Project\n    Start a fresh Django setup")
+        btn_new = QPushButton("✨  Create New Project\n    Start a fresh Django setup")
+        btn_new.setMinimumHeight(80)
         btn_new.clicked.connect(self.request_new_project.emit)
         right_layout.addWidget(btn_new)
 
         btn_open = QPushButton("📂  Open Existing Project\n    Browse your computer")
+        btn_open.setMinimumHeight(80)
         btn_open.clicked.connect(self.browse_project)
         right_layout.addWidget(btn_open)
 

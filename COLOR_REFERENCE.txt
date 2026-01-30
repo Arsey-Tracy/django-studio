@@ -1,0 +1,199 @@
+"""
+Django Studio - Color Scheme Reference
+======================================
+
+DJANGO OFFICIAL COLORS
+======================
+
+Django Primary:        #092E20 (Official Django green - dark)
+Django Light:          #44B78B (Official Django green - light)
+
+These colors are used as primary accents throughout Django Studio.
+
+---
+
+PRIMARY PALETTE
+===============
+
+Backgrounds:
+  Primary BG      #0F1419   Window/main background
+  Secondary BG    #1A1F26   Panels, toolbars, sidebars
+  Tertiary BG     #252B32   Code editor, text areas
+  Border Color    #092E20   Borders, separators (Django green)
+
+Text:
+  Primary Text    #E8EEF5   Main text color
+  Secondary Text  #A8B5C4   Subtext, secondary labels
+  Muted Text      #7A8895   Comments, disabled text
+
+Accents:
+  Primary Accent  #44B78B   Active states, highlights (Light Django green)
+  Secondary Acc.  #FF9E64   Orange, import statements, alt accent
+
+Status:
+  Success         #44B78B   Green - Added lines, success states
+  Error           #FF6B6B   Red - Deleted lines, errors
+  Warning         #FFD700   Gold - Warnings, attention
+  Info            #0C90FF   Blue - Modified lines, information
+
+---
+
+COLOR USAGE BY COMPONENT
+=========================
+
+MAIN WINDOW
+  Background:        Primary BG (#0F1419)
+  Menu bar bg:       Secondary BG (#1A1F26)
+  Menu bar border:   Django Green (#092E20)
+  Selected items:    Django Green (#092E20)
+
+PROJECT TREE
+  Background:        Secondary BG (#1A1F26)
+  Text:              Primary Text (#E8EEF5)
+  Hover bg:          Django Green Accent (#0C4B33)
+  Selected bg:       Django Green (#092E20)
+
+TOOLBAR
+  Background:        Secondary BG (#1A1F26)
+  Border:            Django Green (#092E20) - 3px
+  Buttons:           Transparent (inactive)
+  Button hover:      Django Green Accent (#0C4B33)
+  Button pressed:    Light Django Green (#44B78B)
+  Text:              Primary Text (#E8EEF5)
+
+CODE EDITOR
+  Background:        Tertiary BG (#252B32)
+  Text:              Primary Text (#E8EEF5)
+  Line number:       Secondary Text (#A8B5C4)
+  Current line:      Django Green (30% opacity)
+  Bracket match:     Light Django Green (#44B78B)
+
+TABS
+  Normal bg:         Secondary BG (#1A1F26)
+  Normal text:       Secondary Text (#A8B5C4)
+  Active bg:         Tertiary BG (#252B32)
+  Active text:       Primary Text (#E8EEF5)
+  Active border:     Light Django Green (#44B78B)
+
+SYNTAX HIGHLIGHTING
+  Keywords:          Light Django Green (#44B78B) bold
+  Strings:           Orange (#FF9E64)
+  Comments:          Muted Text (#7A8895)
+  Numbers:           Info Blue (#0C90FF)
+  Operators:         Secondary Text (#A8B5C4)
+  Built-ins:        Light Django Green (#44B78B)
+  Decorators:        Orange (#FF9E64)
+
+GIT GUTTER
+  Added:             Success Green (#44B78B)
+  Modified:          Info Blue (#0C90FF)
+  Deleted:           Error Red (#FF6B6B)
+  Separator:         Muted Text (#7A8895)
+
+MINIMAP
+  Background:        Secondary BG (#1A1F26)
+  Border:            Django Green (#092E20)
+  Definitions:       Light Django Green (#44B78B)
+  Imports:           Orange (#FF9E64)
+  Comments:          Muted Text (#7A8895)
+  Keywords:          Info Blue (#0C90FF)
+  Viewport:          Light Django Green (80% opacity)
+
+FIND & REPLACE
+  Background:        Secondary BG (#1A1F26)
+  Input bg:          Tertiary BG (#252B32)
+  Input border:      Django Green (#092E20)
+  Button bg:         Django Green (#092E20)
+  Button hover:      Light Django Green (#44B78B)
+  Checkbox unchecked: Tertiary BG (#252B32)
+  Checkbox checked:  Light Django Green (#44B78B)
+
+BREADCRUMB
+  Background:        Secondary BG (#1A1F26)
+  Text:              Primary Text (#E8EEF5)
+  Hover bg:          Django Green Accent (#0C4B33)
+  Selected bg:       Django Green (#092E20)
+
+LINE NUMBERS
+  Text:              Secondary Text (#A8B5C4)
+  Fold indicators:   Light Django Green (#44B78B) when folded
+  Fold indicators:   Muted Text (#7A8895) when not folded
+
+WELCOME WINDOW
+  Background:        Primary BG (#0F1419)
+  Logo text:         Light Django Green (#44B78B)
+  Logo size:         36px bold
+  Tagline:           Secondary Text (#A8B5C4)
+  Button bg:         Django Green (#092E20)
+  Button hover:      Light Django Green (#44B78B)
+  Button pressed:    Light Django Green (#44B78B)
+
+---
+
+DESIGN PRINCIPLES
+=================
+
+1. DJANGO BRANDING
+   - All primary accents use Django's official colors
+   - Creates strong visual connection to Django framework
+   - Professional, recognizable appearance
+
+2. HIERARCHY
+   - Primary text (#E8EEF5) for main content
+   - Secondary text (#A8B5C4) for subtext
+   - Muted text (#7A8895) for comments/disabled
+
+3. CONTRAST
+   - High contrast between text and backgrounds
+   - Ensures readability and accessibility
+   - WCAG AA compliant for most combinations
+
+4. CONSISTENCY
+   - Same colors used across all components
+   - Hover/active states follow patterns
+   - Status colors are consistent globally
+
+5. PROFESSIONAL
+   - Dark theme reduces eye strain
+   - Modern, clean appearance
+   - Enterprise-grade look and feel
+
+---
+
+IMPLEMENTATION
+==============
+
+All colors are defined in:
+  src/theme/django_theme.py
+
+Access colors in code:
+  from theme.django_theme import DjangoTheme
+  
+  DjangoTheme.DJANGO_GREEN        # #092E20
+  DjangoTheme.ACCENT_PRIMARY      # #44B78B
+  DjangoTheme.PRIMARY_BG          # #0F1419
+  etc.
+
+Generate stylesheets:
+  stylesheet = DjangoTheme.get_stylesheet()
+  toolbar_css = DjangoTheme.get_toolbar_stylesheet()
+  editor_css = DjangoTheme.get_editor_stylesheet()
+
+---
+
+CUSTOMIZATION
+=============
+
+To modify colors, edit django_theme.py:
+
+1. Change color constants (DJANGO_GREEN, etc.)
+2. Stylesheets will automatically use new colors
+3. All components will update instantly
+
+Colors are centralized for easy theming.
+
+---
+
+Django Studio Color Reference
+Django Official + Modern Dark Theme = Perfect Balance
+"""

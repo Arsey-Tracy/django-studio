@@ -6,6 +6,7 @@ from PySide6.QtWidgets import (
 from ui.main_window import DjangoStudioWindow
 from widgets.project_wizard import ProjectWizard
 from ui.welcome_window import WelcomeWindow
+
 class DjangoStudioApp:
     def __init__(self):
         self.app = QApplication(sys.argv)
